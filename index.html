@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Digital Agency | Пресскот, Arizona RP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B4513;
+            --secondary: #CD853F;
+            --accent: #2F4F4F;
+            --neutral: #F5F5DC;
+            --base: #FEFEFE;
+            --text: #2C1810;
+            --muted: #696969;
+        }
+        body {
+            background: linear-gradient(135deg, var(--neutral) 0%, #FAFAFA 100%);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(205, 133, 63, 0.8));
+        }
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .role-card {
+            background: white;
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), transparent);
+            margin: 3rem 0;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.05), rgba(205, 133, 63, 0.05));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .toc-fixed {
+            position: fixed;
+            left: -280px;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            transition: left 0.3s;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .toc-fixed.open {
+            left: 0;
+        }
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Кнопка меню -->
+    <button id="menu-btn" class="menu-btn"><i class="fas fa-bars"></i></button>
+
+    <!-- Выезжающее меню -->
+    <div id="toc" class="toc-fixed">
+        <h3 class="font-serif text-xl text-gray-800 mb-6">Меню</h3>
+        <a href="#about" class="toc-link block py-2 px-4 rounded hover:bg-orange-50 text-gray-700">О компании</a>
+        <a href="#services" class="toc-link block py-2 px-4 rounded hover:bg-orange-50 text-gray-700">Услуги</a>
+        <a href="#portfolio" class="toc-link block py-2 px-4 rounded hover:bg-orange-50 text-gray-700">Портфолио</a>
+        <a href="#contacts" class="toc-link block py-2 px-4 rounded hover:bg-orange-50 text-gray-700">Контакты</a>
+    </div>
+
+    <!-- Оверлей -->
+    <div id="toc-overlay" class="overlay"></div>
+
+    <!-- Герой-секция -->
+    <header class="hero-gradient text-white py-20 px-8">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-5xl lg:text-7xl font-serif font-bold leading-tight">Neon Digital Agency</h1>
+            <p class="text-xl lg:text-2xl opacity-90 mt-4">Официальный веб-портал | Пресскот, Arizona RP</p>
+            <p class="mt-2 opacity-75">Основано: 2025 год | Владелец: Matias Bazan</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="max-w-6xl mx-auto px-8 py-16">
+
+        <!-- О компании -->
+        <section id="about" class="mb-16">
+            <h2 class="text-4xl font-serif font-bold text-gray-800 mb-8">🏢 О компании</h2>
+            <div class="role-card mb-6">
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Neon Digital Agency</strong> — единственная лицензированная веб-студия штата Пресскот. 
+                    Основана в 2025 году <strong>Matias Bazan</strong>, специалистом в области цифровой интеграции.
+                </p>
+                <p class="text-gray-700 mt-4">
+                    Мы разрабатываем цифровые решения для гос. структур, криминальных организаций и частных лиц, 
+                    обеспечивая полную интеграцию с реальностью Arizona RP.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mt-8">
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>Местоположение</h4>
+                    <p>Пресскот, ул. Digital Way, 17</p>
+                </div>
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-user-tie text-orange-500 mr-2"></i>Владелец</h4>
+                    <p>Matias Bazan — единственный разработчик</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Услуги -->
+        <section id="services" class="mb-16">
+            <h2 class="text-4xl font-serif font-bold text-gray-800 mb-8">💼 Услуги</h2>
+            <p class="text-gray-700 mb-6">Все сайты создаются с учётом RP-реалий и могут использоваться в сюжетах.</p>
+
+            <div class="grid lg:grid-cols-2 gap-6">
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3">🌐 Сайт персонажа</h4>
+                    <p class="text-sm text-gray-600">VIP-профиль: история, звания, достижения.</p>
+                    <div class="mt-2 text-orange-600 font-semibold">5 000 000 AZ$</div>
+                </div>
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3">🏛️ Сайт банды / клана</h4>
+                    <p class="text-sm text-gray-600">Официальный портал: состав, устав, база операций.</p>
+                    <div class="mt-2 text-orange-600 font-semibold">20 000 000 AZ$</div>
+                </div>
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3">🛡️ Сайт гос. структуры</h4>
+                    <p class="text-sm text-gray-600">LSPD, SASP, FIB — с розыском, формами, чатами.</p>
+                    <div class="mt-2 text-orange-600 font-semibold">50 000 000 AZ$</div>
+                </div>
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3">📄 Генератор документов</h4>
+                    <p class="text-sm text-gray-600">Удостоверения, ордера, водительские права.</p>
+                    <div class="mt-2 text-orange-600 font-semibold">12 000 000 AZ$</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Портфолио -->
+        <section id="portfolio" class="mb-16">
+            <h2 class="text-4xl font-serif font-bold text-gray-800 mb-8">🖼️ Портфолио</h2>
+            <p class="text-gray-700 mb-6">Примеры наших работ в мире San Andreas.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3">Сайт LSPD Пресскота</h4>
+                    <p class="text-sm text-gray-600">Портал с розыском, формами и системой оповещений.</p>
+                </div>
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3">Портал "Los Diablos"</h4>
+                    <p class="text-sm text-gray-600">Закрытый сайт банды с доступом по паролю.</p>
+                </div>
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3">DMV Arizona</h4>
+                    <p class="text-sm text-gray-600">Фейковый сайт для оформления документов.</p>
+                </div>
+                <div class="role-card">
+                    <h4 class="font-semibold text-gray-800 mb-3">Бизнес: Vinewood Auto</h4>
+                    <p class="text-sm text-gray-600">Онлайн-витрина с каталогом автомобилей.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Контакты -->
+        <section id="contacts" class="mb-16">
+            <h2 class="text-4xl font-serif font-bold text-gray-800 mb-8">📞 Контакты</h2>
+            <div class="role-card">
+                <p class="text-gray-700">
+                    Для заказа услуг обращайтесь лично в Пресскоте.  
+                    Matias Bazan доступен с 08:00 до 20:00.
+                </p>
+                <p class="text-sm text-gray-600 mt-4">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Пресскот, ул. Digital Way, 17  
+                    <br><i class="fas fa-clock mr-2 mt-2"></i> Рабочее время: 08:00–20:00  
+                    <br><i class="fas fa-building mr-2 mt-2"></i> Офис открыт для посетителей
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Футер -->
+    <footer class="bg-gray-800 text-white py-8 px-8">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-sm opacity-75">
+                © 2025 Neon Digital Agency | Официальная веб-студия штата Пресскот | Arizona RP
+            </p>
+            <p class="text-xs opacity-50 mt-1">
+                Все права защищены. Материалы предназначены для внутреннего использования в рамках ролевой игры.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Скрипт для меню -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.getElementById('menu-btn');
+            const toc = document.getElementById('toc');
+            const overlay = document.getElementById('toc-overlay');
+
+            function openMenu() {
+                toc.classList.add('open');
+                overlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                toc.classList.remove('open');
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (toc.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            overlay.addEventListener('click', closeMenu);
+
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1024) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
